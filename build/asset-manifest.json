@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d328c75d.css",
+    "main.js": "/static/js/main.143f7996.js",
+    "static/js/453.4a1549b8.chunk.js": "/static/js/453.4a1549b8.chunk.js",
+    "static/media/white.jpg": "/static/media/white.72757bff0489be38e43e.jpg",
+    "static/media/black.jpg": "/static/media/black.bff6cef16048cd5b8480.jpg",
+    "static/media/defis.png": "/static/media/defis.9d7c32e9b6eeae8fa29f.png",
+    "static/media/mid.png": "/static/media/mid.ad24a1ef37a34b8fe247.png",
+    "static/media/ecole.png": "/static/media/ecole.9ca9af20d4e9ba890a98.png",
+    "static/media/cv.png": "/static/media/cv.323734d8aa477c7e068a.png",
+    "static/media/competence.png": "/static/media/competence.7dc19e76ba7d28dbac23.png",
+    "static/media/hello.png": "/static/media/hello.5a58221cd7631d5dfb66.png",
+    "static/media/node.svg": "/static/media/node.8ea36e55a02eba3d7c5c3542d14c44ab.svg",
+    "static/media/react.svg": "/static/media/react.e4437aca768345220295e23854ebc6ad.svg",
+    "static/media/laravel.svg": "/static/media/laravel.5929cbd9309e312d9264831185ad809e.svg",
+    "static/media/java.svg": "/static/media/java.75490a49937954f7802d87f39b7a657a.svg",
+    "static/media/php.svg": "/static/media/php.8d2083476b35c7d987302671e2d893ac.svg",
+    "index.html": "/index.html",
+    "main.d328c75d.css.map": "/static/css/main.d328c75d.css.map",
+    "main.143f7996.js.map": "/static/js/main.143f7996.js.map",
+    "453.4a1549b8.chunk.js.map": "/static/js/453.4a1549b8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d328c75d.css",
+    "static/js/main.143f7996.js"
+  ]
+}
