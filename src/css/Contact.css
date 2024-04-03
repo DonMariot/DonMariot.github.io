@@ -1,0 +1,53 @@
+.cont_container {
+    position: relative; 
+    top: 20%; 
+    left: 65%; 
+    transform: translate(-50%, -50%); 
+    text-align: left;
+}
+
+.cont_h2 {
+    font-size: 1.5vw;
+    text-align:center;
+    margin-bottom: 5%;
+}
+
+.cont_item {
+    width: 35vw;
+    margin-top: 10%;
+    margin-right: 25%;
+    float: right;
+}
+
+.custom_adress {
+    font-size: 1vw;
+}
+
+.custom_message {
+    font-size: 1vw;
+}
+
+.cont_button {
+    position: relative;
+    width: 20vw;
+    display: flex;
+}
+
+.div_text {
+    position: absolute;
+    width: 28vw;
+    font-size: 1vw;
+    top: 80px;
+}
+
+.cont_text {
+    text-align:center;
+    font-size: 1vw;
+    font-weight: 100;
+}
+
+.cont_copie {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1vw;
+}

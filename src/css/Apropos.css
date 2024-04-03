@@ -1,0 +1,34 @@
+.aprop_container {
+    position: relative; 
+    top: 50%; 
+    left: 65%; 
+    transform: translate(-50%, -50%); 
+    text-align: left; 
+}
+
+.aprop_h2 {
+    margin-bottom: 2%;
+    font-size: 2vw;
+}
+
+.aprop_item {
+  width: 70%;
+}
+
+.aprop_nom {
+    font-size: 2vw;
+}
+
+.aprop_text {
+    text-align: justify;
+    font-size: 1vw;
+}
+
+.aprop_conct {
+    font-size: 1.8vw;
+}
+
+.btn_prop {
+    font-size: 1vw;
+    width: 15rem;
+}

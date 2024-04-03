@@ -1,0 +1,42 @@
+.real_container {
+    position: relative; 
+    top: 45%; 
+    left: 60%; 
+    transform: translate(-50%, -50%); 
+    text-align: left; 
+
+}
+
+.real_h2 {
+    font-size: 2vw;
+}
+
+.real_col {
+    margin-top: 35px;
+    width: 20vw;
+}
+
+.real_title {
+    font-size: 1vw;
+}
+
+.real_p {
+    position: absolute;
+    margin-left: 0%;
+    font-size: 1vw;
+    white-space: nowrap;
+    display: inline-block;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+
+.real_item {
+    position: relative;
+    width: 70%;
+    top: 50%;
+    left: 10%;
+}
+
+.real_icon {
+    text-align: center;
+}

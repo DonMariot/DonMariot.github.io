@@ -1,0 +1,35 @@
+.home_container {
+    position: relative; 
+    top: 50%; 
+    left: 65%; 
+    transform: translate(-50%, -50%); 
+    text-align: left; 
+}
+  
+.home_item {
+  display: inline;
+  position: relative;
+  width: 80vw;
+}
+
+.home_h1 {
+    font-size: 2.5vw; 
+  }
+  
+.home_name {
+    margin-top: -0.5%;
+    width: 60%;
+    font-size: 2.5vw; 
+    font-weight: bold; 
+}
+  
+.home_text {
+    margin-top: -1%;
+    font-size: 1vw; 
+    line-height: 1.6; 
+    width: 30%;
+}
+  
+.btn_home {
+  font-size: 1vw;
+}

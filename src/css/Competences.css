@@ -1,0 +1,67 @@
+.comp_container{
+    position: relative; 
+    top: 40%; 
+    left: 65%; 
+    transform: translate(-50%, -50%); 
+    text-align: left; 
+}
+
+.comp_h2 {
+    margin-bottom: 2%;
+    font-size: 2vw;
+}
+
+.comp_item {
+    width: 35%;
+}
+
+.comp_progress {
+    margin-bottom: 3%; 
+    height: 20%;
+}
+
+.comp_progress.mode-nuit {
+    background-color: #333;
+}
+
+.comp_comp {
+    margin-bottom: 1.5%;
+    width: 35%;
+}
+
+.comp_comp > * {
+    margin-right: 10px;
+}
+
+.comp_comp > *:last-child {
+    margin-right: 0;
+}
+  
+
+.btnn {
+    width: 7rem;
+    font-size: 1vw;
+    color: aliceblue;
+    border-color: aliceblue;
+}
+
+.btnn.hovered {
+    color: aliceblue;
+    border-color: aliceblue;
+}
+
+.btnn.mode-nuit {
+    border-color: #333;
+    color: #333;
+}  
+
+.button-clicked  {
+  background-color: #f0f0f0; 
+  color: #333; 
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.button-clicked.mode-nuit {
+    background-color: #333;
+    color: aliceblue;
+}
