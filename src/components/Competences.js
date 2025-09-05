@@ -77,7 +77,7 @@ const Competences = ({ modeNuit }) => {
           color=''
           variant="outline"
           shape="rounded-pill">
-          Conception
+          Concept°
         </CButton>
         <CButton
           className={`btnn ${modeNuit ? 'mode-nuit' : ''}`}
@@ -86,7 +86,7 @@ const Competences = ({ modeNuit }) => {
           color=''
           variant="outline"
           shape="rounded-pill">
-          Méthodologie
+          Méthode
         </CButton>
         <CButton
           className={`btnn ${modeNuit ? 'mode-nuit' : ''}`}
