@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { number, icon, dataI18nTitle, dataI18nDescription, dataI18nDetailsPrefix } = Astro.props;
+---
+
+<div class="group relative flex flex-col justify-between p-6 border border-white/10 rounded-xl bg-[#0B0B0C] hover:border-white/30 transition-all duration-300">
+
+  <div class="flex items-start justify-between mb-4">
+    <div class="flex items-center gap-3">
+      <div class="p-2 rounded-md bg-white/5 border border-white/10">
+      <Icon 
+        name={icon} 
+        class={`w-5 h-5 ${
+          number === "01" ? "text-[#E57373]" :
+          number === "02" ? "text-[#FFD54F]" :
+          number === "03" ? "text-[#81C784]" : "text-white/70"
+        }`} 
+      />
+    </div>
+
+      <h3 class="text-lg font-medium text-white" data-i18n={dataI18nTitle}>
+      </h3>
+    </div>
+
+    <span class="text-lg text-white/30 font-mono tracking-widest">
+      {number}
+    </span>
+  </div>
+
+  <p class="text-sm text-white/50 leading-relaxed mb-6" data-i18n={dataI18nDescription}></p>
+
+  <div class="h-px bg-white/10 mb-6"></div>
+
+  <ul class="space-y-2 text-sm text-white/60">
+    {Array.from({ length: 6 }).map((_, idx) => (
+      <li class="flex items-center justify-between" data-i18n={`${dataI18nDetailsPrefix}.${idx}`}>
+        <span></span>
+        <span class="w-1.5 h-1.5 bg-white/30 rounded-full"></span>
+      </li>
+    ))}
+  </ul>
+</div>

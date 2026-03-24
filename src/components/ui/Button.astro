@@ -1,0 +1,23 @@
+---
+interface Props {
+  type?: string;
+  href?: string;
+  variant?: "primary" | "ghost";
+  class?: string; 
+}
+
+const { href = "#", variant = "primary", class: extraClass = "", type = "button" } = Astro.props as Props;
+
+const styles: Record<"primary" | "ghost", string> = {
+  primary: "bg-gray-300 text-black hover:bg-white",
+  ghost: "border border-white/20 hover:bg-white/10"
+};
+---
+
+<a
+  href={href}
+  class={`inline-flex items-center px-5 py-3 rounded-lg text-sm font-medium transition transform hover:-translate-y-1 hover:scale-100 ${styles[variant]} ${extraClass}`}
+  type={type} 
+>
+  <slot />
+</a>

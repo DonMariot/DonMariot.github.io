@@ -1,0 +1,45 @@
+---
+const grips = [
+  {
+    title: "problem.items.0.title",
+    description: "problem.items.0.description",
+    image: "/images/fragmented.png",
+  },
+  {
+    title: "problem.items.1.title",
+    description: "problem.items.1.description",
+    image: "/images/missed.png",
+  },
+  {
+    title: "problem.items.2.title",
+    description: "problem.items.2.description",
+    image: "/images/limited.png",
+  },
+  {
+    title: "problem.items.3.title",
+    description: "problem.items.3.description",
+    image: "/images/technology.png",
+  },
+];
+---
+
+<div class="grid md:grid-cols-2 gap-10 w-full max-w-7xl">
+  {grips.map((grip) => (
+    <div class="flex flex-col md:flex-row gap-6 text-start items-stretch">
+
+      <div class="flex-1 flex flex-col justify-center">
+        <h3 class="font-semibold text-white text-xl mb-3" data-i18n={grip.title}></h3>
+        <p class="text-white/70 leading-relaxed text-justify" data-i18n={grip.description}></p>
+      </div>
+
+      <div class="w-full md:w-1/3 rounded-lg overflow-hidden shrink-0 flex justify-center items-center">
+        <img
+          src={grip.image}
+          alt="problem"
+          class="w-full h-64 md:h-48 object-contain rounded-4xl object-center fade-mask"
+        />
+      </div>
+
+    </div>
+  ))}
+</div>

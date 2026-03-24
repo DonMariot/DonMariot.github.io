@@ -1,0 +1,24 @@
+---
+import Section from "../../ui/Section.astro"
+
+import CapabilitiesHeadline from "./CapabilitiesHeadline.astro"
+import CapabilitiesDescription from "./CapabilitiesDescription.astro"
+import CapabilitiesGrid from "./CapabilitiesGrid.astro"
+import CapabilitieFooter from "./capabilitieFooter.astro"
+---
+
+<Section id="capabilities" class="text-white max-w-full bg-zinc-950/80 relative overflow-hidden">
+
+  <div class="flex flex-col items-center max-w-7xl w-full gap-14 md:gap-16">
+
+    <CapabilitiesHeadline />
+
+    <CapabilitiesDescription />
+
+    <CapabilitiesGrid />
+
+    <CapabilitieFooter />
+
+  </div>
+
+</Section>

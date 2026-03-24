@@ -1,17 +1,34 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 
+import Hero from "../components/sections/hero/Hero.astro";
+import Problem from "../components/sections/problem/Problem.astro";
+import Solutions from "../components/sections/solutions/Solutions.astro";
+import Proof from "../components/sections/proof/Proof.astro";
+import Architecture from "../components/sections/architecture/Architecture.astro";
+import Method from "../components/sections/method/Method.astro";
+import Principles from "../components/sections/principles/Principles.astro";
+import Capabilities from "../components/sections/capabilities/capabilitie.astro";
+import Contact from "../components/sections/contact/Contact.astro";
+
+const SEO = {
+  title: "Digital Solutions Architect & Workflow Automation",
+  description:
+    "I design and build scalable systems, automation workflows, and high-performance applications for startups and enterprises.",
+  image: "/og-home.jpg",
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout {...SEO}>
+
+  <Hero />
+  <Problem />
+  <Solutions />
+  <Proof />
+  <Architecture />
+  <Method />
+  <Principles />
+  <Capabilities />
+  <Contact />
+
+</BaseLayout>

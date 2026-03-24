@@ -1,0 +1,46 @@
+---
+import SolutionCard from "./SolutionCard.astro"
+---
+
+<div class="grid md:grid-cols-2 gap-6 max-w-6xl w-full auto-rows-fr">
+  <div class="flex flex-col gap-12 text-start h-full">
+    <SolutionCard
+      title="solution.items.0.title"
+      description="solution.items.0.description"
+      icon="heroicons-outline:bolt"
+    />
+
+    <SolutionCard
+      title="solution.items.1.title"
+      description="solution.items.1.description"
+      icon="heroicons-outline:shield-check"
+    />
+
+    <SolutionCard
+      title="solution.items.2.title"
+      description="solution.items.2.description"
+      icon="heroicons-outline:cog"
+    />
+  </div>
+
+  <div
+    class="
+      h-full
+      rounded-2xl
+      
+      bg-black/70
+      
+      flex
+      items-center
+      justify-center
+      overflow-hidden
+    "
+  >
+    <img 
+      src="/images/solutions.png" 
+      alt="solution" 
+      loading="lazy" 
+      class="max-h-full w-auto object-contain rounded-4xl fade-mask"
+    />
+  </div>
+</div>

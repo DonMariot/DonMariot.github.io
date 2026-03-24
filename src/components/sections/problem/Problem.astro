@@ -1,0 +1,21 @@
+---
+import Section from "../../ui/Section.astro"
+
+import ProblemHeadline from "./ProblemHeadline.astro"
+import ProblemDescription from "./ProblemDescription.astro"
+import ProblemGrid from "./ProblemGrid.astro"
+import ProblemFooter from "./ProblemFooter.astro"
+---
+
+<Section id="problem" class="text-white max-w-full bg-zinc-950/80 relative overflow-hidden">
+
+  <div class="flex flex-col items-center max-w-7xl w-full gap-14 md:gap-16">
+
+    <ProblemHeadline />
+    <ProblemDescription />
+    <ProblemGrid />
+    <ProblemFooter />
+
+  </div>
+
+</Section>

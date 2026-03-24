@@ -1,0 +1,118 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+  id="about-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center min-h-screen sm:mt-10 px-10 sm:px-10 md:px-0"
+>
+  <div
+    id="about-overlay"
+    class="absolute inset-0 bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-300"
+  ></div>
+
+  <div
+    id="about-panel"
+    class="
+      relative z-10 w-full max-w-4xl rounded-lg border border-white/20
+      dark:border-white/10 bg-white/80 dark:bg-neutral-900/90
+      backdrop-blur-xl shadow-2xl scale-95 opacity-0 transition-all duration-300 overflow-hidden
+    "
+  >
+    <button
+      id="about-close"
+      class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 dark:hover:text-white hover:cursor-pointer transition"
+    >
+      <Icon name="heroicons-outline:x-mark" class="w-6 h-6" />
+    </button>
+
+    <div class="grid md:grid-cols-2">
+      <div
+        class="
+          flex items-center justify-center p-12 h-60 md:h-full
+          bg-linear-to-br from-gray-100 to-gray-200
+          dark:from-neutral-800 dark:to-neutral-900
+        "
+      >
+        <img
+          src="/images/profil.webp"
+          alt="Profile"
+          class="
+            w-50 md:w-70 h-50 md:h-70 rounded-full object-cover ring-1 ring-white/30 shadow-xl
+            transition-transform duration-300 hover:scale-105 hover:cursor-none
+          "
+        />
+      </div>
+
+      <div class="p-10 flex flex-col justify-center space-y-6">
+        <div class="pb-4 border-b border-gray-200 dark:border-neutral-700">
+          <h2 class="text-2xl mb-4 font-bold text-gray-900 dark:text-white">
+            Don Mariot R.
+          </h2>
+          <p class="text-lg text-gray-500 dark:text-gray-400 font-medium" data-i18n="about.subtitle"></p>
+        </div>
+
+        <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed text-justify" data-i18n="about.description"></p>
+
+        <div class="flex gap-4 flex-wrap">
+          <a
+            id="request-cv-btn"
+            class="
+              flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold
+              bg-black text-white hover:bg-neutral-800 transition cursor-pointer
+            "
+          >
+            <Icon name="heroicons-outline:arrow-down-tray" class="w-5 h-5" />
+            <span data-i18n="about.cv"></span>
+          </a>
+
+          <a
+            href="#contact"
+            id="contact-btn"
+            class="
+              flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold
+              border border-gray-300 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition
+            "
+          >
+            <Icon name="heroicons-outline:chat-bubble-left-right" class="w-5 h-5" />
+            <span data-i18n="about.contact"></span>
+          </a>
+        </div>
+
+        <p
+          id="request-cv-text"
+          class="text-gray-700 dark:text-gray-300 mt-1 text-sm opacity-0 transition-opacity duration-500"
+          data-i18n="about.request_cv_text"
+          >
+        </p>
+
+        <div id="social-icons" class="flex gap-6 border-t border-gray-200 dark:border-neutral-700 py-4 justify-center">
+          <a href="mailto:razandri17@gmail.com" aria-label="Email" class="group">
+            <img src="/icons/gmail.svg"
+                class="w-6 h-6 transition duration-300 group-hover:animate-bounce"
+                alt="Email" />
+          </a>
+
+          <a href="https://www.linkedin.com/in/donmariot" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="group">
+            <img src="/icons/linkedin.svg"
+                class="w-7 h-7 transition duration-300 group-hover:animate-bounce"
+                alt="LinkedIn" />
+          </a>
+
+          <a href="https://wa.me/261349706843" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="group">
+            <img src="/icons/whatsapp.svg"
+                class="w-6 h-6 transition duration-300 group-hover:animate-bounce"
+                alt="WhatsApp" />
+          </a>
+
+          <a href="https://discord.com/users/T1012087153750188129" target="_blank" rel="noopener noreferrer" aria-label="Discord" class="group">
+            <img src="/icons/discord.svg"
+                class="w-6 h-6 transition duration-300 group-hover:animate-bounce"
+                alt="Discord" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

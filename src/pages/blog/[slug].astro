@@ -1,0 +1,32 @@
+---
+import SeoPage from "../../layouts/SeoPage.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const { title, description, image, draft } = post.data;
+---
+
+<SeoPage
+  title={title}
+  description={description}
+  image={image}
+  noindex={draft}
+>
+  <article class="prose prose-invert max-w-3xl mx-auto py-16">
+    <h1>{title}</h1>
+    <slot />
+    <a href="/blog" class="mt-12 inline-block opacity-70 hover:opacity-100">
+      ← Back to blog
+    </a>
+  </article>
+</SeoPage>

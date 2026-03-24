@@ -1,0 +1,23 @@
+---
+import ArchitectureCard from "./ArchitectureCard.astro"
+
+const items = Array.from({ length: 5 }, (_, i) => ({
+  key: `architecture.items.${i}`,
+  imageSrc: [
+    "/images/app-mobile.png",
+    "/images/api.png",
+    "/images/web.png",
+    "/images/database.png",
+    "/images/reporting.png",
+  ][i],
+}));
+---
+
+<div class="max-w-4xl w-full mx-auto flex flex-col gap-6 px-4 sm:px-0">
+  {items.map((item) => (
+    <ArchitectureCard
+      i18nKey={item.key}
+      imageSrc={item.imageSrc}
+    />
+  ))}
+</div>

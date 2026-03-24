@@ -1,0 +1,141 @@
+---
+const proofs = [
+  {
+    key: "proof.proofs.0",
+    image: "/images/centella.png",
+    tech: [
+      { icon: "/icons/react-js-icon.svg", name: "React" },
+      { icon: "/icons/node-js-icon.svg", name: "Node.js" },
+      { icon: "/icons/mysql-icon.svg", name: "MySQL" },
+      { icon: "/icons/swagger-svgrepo-com.svg", name: "Swagger" },
+      { icon: "/icons/android-robot-bot-icon.svg", name: "Android" }
+    ]
+  },
+  {
+    key: "proof.proofs.1",
+    image: "/images/vanille.png",
+    tech: [
+      { icon: "/icons/react-js-icon.svg", name: "React" },
+      { icon: "/icons/node-js-icon.svg", name: "Node.js" },
+      { icon: "/icons/postgresql-logo.svg", name: "PostgreSQL" },
+      { icon: "/icons/firebase-svgrepo-com.svg", name: "Firebase" },
+      { icon: "/icons/expo-svgrepo-com.svg", name: "Expo" }
+    ]
+  },
+  {
+    key: "proof.proofs.2",
+    image: "/images/erp.png",
+    tech: [
+      { icon: "/icons/typescript-svgrepo-com.svg", name: "TypeScript" },
+      { icon: "/icons/nextjs-icon.svg", name: "Next.js" },
+      { icon: "/icons/nestjs-svgrepo-com.svg", name: "NestJS" },
+      { icon: "/icons/postgresql-logo.svg", name: "PostgreSQL" },
+      { icon: "/icons/pnpm-svgrepo-com.svg", name: "pnpm" }
+    ]
+  },
+  {
+    key: "proof.proofs.3",
+    image: "/images/prospect.png",
+    tech: [
+      { icon: "/icons/nextjs-icon.svg", name: "Next.js" },
+      { icon: "/icons/nestjs-svgrepo-com.svg", name: "NestJS" },
+      { icon: "/icons/postgresql-logo.svg", name: "PostgreSQL" },
+      { icon: "/icons/tailwind-svgrepo-com.svg", name: "Tailwind CSS" },
+      { icon: "/icons/astro-svgrepo-com.svg", name: "Astro" }
+    ]
+  },
+];
+---
+
+<div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-3 md:gap-4">
+
+  {proofs.map((proof) => (
+    <div
+      class="flex flex-col md:flex-row items-stretch
+      md:h-45
+     rounded-xl
+      bg-transparent
+      overflow-hidden
+      hover:cursor-pointer"
+    >
+
+      <!-- TEXT -->
+      <div class="flex-1 p-4 md:p-5 flex flex-col justify-between md:w-1/2 bg-white/2">
+
+        <div class="space-y-1.5">
+          <h3
+            class="text-white text-sm md:text-base font-medium tracking-tight"
+            data-i18n={`${proof.key}.title`}
+          ></h3>
+
+          <p
+            class="text-white/70 text-xs md:text-sm leading-snug line-clamp-2"
+            data-i18n={`${proof.key}.statement`}
+          ></p>
+
+          <p
+            class="text-white/40 text-[10px] uppercase tracking-wider"
+            data-i18n={`${proof.key}.signals`}
+            data-i18n-join="  •  "
+          ></p>
+
+          <p
+            class="text-white/50 text-[11px] leading-snug line-clamp-2"
+            data-i18n={`${proof.key}.proof`}
+          ></p>
+        </div>
+
+        <div class="flex gap-1.5 mt-3 flex-wrap justify-center">
+          {proof.tech.map((tech) => (
+            <div class="relative group">
+              <div
+                class="w-7 h-7 rounded-md
+                border border-white/10
+                bg-white/5
+                flex items-center justify-center
+                transition-all duration-200 ease-out
+                hover:bg-white/10 hover:border-white/20
+                hover:-translate-y-px"
+              >
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  title={tech.name}
+                  class="w-3.5 h-3.5 opacity-80 transition duration-200 ease-out hover:opacity-100"
+                  loading="lazy"
+                />
+              </div>
+
+              <span
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-1
+                text-[10px] text-white bg-black/80 px-2 py-1 rounded
+                opacity-0 group-hover:opacity-100
+                transition pointer-events-none whitespace-nowrap"
+              >
+                {tech.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="relative md:w-[45%] bg-transparent flex items-center justify-center">
+
+        <div class="absolute inset-0 pointer-events-none
+          bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),
+              linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)]
+          bg-size-[28px_28px]">
+        </div>
+
+        <img
+          src={proof.image}
+          alt="Project screenshot"
+          loading="lazy"
+          class="w-full h-36 sm:h-40 md:h-full object-contain opacity-90"
+        />
+      </div>
+
+    </div>
+  ))}
+
+</div>

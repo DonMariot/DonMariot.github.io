@@ -1,0 +1,248 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<form
+  id="contactForm"
+  class="max-w-5xl mx-auto grid grid-cols-3 gap-5 w-full"
+  action="https://formspree.io/f/xqeynqpj"
+  method="POST"
+>
+
+  <div class="col-span-3 md:col-span-1">
+    <div class="group relative cursor-text">
+      
+      <Icon name="heroicons-outline:user"
+        class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 group-focus-within:text-white/60 transition" />
+
+      <input
+        id="name"
+        type="text"
+        name="name"
+        required
+        placeholder=" "
+        class="peer w-full pl-11 pr-4 pt-6 pb-2 rounded-lg 
+        bg-white/3 border border-white/8
+        text-white text-sm
+        focus:outline-none focus:border-white/20 focus:bg-white/5
+        transition-all duration-200"
+      />
+
+      <label for="name"
+        data-i18n="contact.form.name"
+        class="absolute left-11 top-1/3 -translate-y-1/2 mt-2 text-white/40 text-sm
+        transition-all duration-200
+        peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-white/60
+        peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-[11px]">
+      </label>
+
+    </div>
+  </div>
+
+  <div class="col-span-3 md:col-span-1">
+    <div class="group relative cursor-text">
+      
+      <Icon name="heroicons-outline:envelope"
+        class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 group-focus-within:text-white/60 transition" />
+
+      <input
+        id="email"
+        type="email"
+        name="email"
+        required
+        placeholder=" "
+        class="peer w-full pl-11 pr-4 pt-6 pb-2 rounded-lg 
+        bg-white/3 border border-white/8
+        text-white text-sm
+        focus:outline-none focus:border-white/20 focus:bg-white/5
+        transition-all duration-200"
+      />
+
+      <label for="email"
+        data-i18n="contact.form.email"
+        class="absolute left-11 top-1/3 -translate-y-1/2 mt-2 text-white/40 text-sm
+        transition-all duration-200
+        peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-white/60
+        peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-[11px]">
+      </label>
+
+    </div>
+  </div>
+
+  <input type="hidden" name="_replyto" id="replytoField" value="">
+  <input type="hidden" name="_next" value="/merci" />
+
+  <div class="col-span-3 md:col-span-1">
+    <div class="group relative cursor-text">
+      
+      <Icon name="heroicons-outline:building-office-2"
+        class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 group-focus-within:text-white/60 transition" />
+
+      <input
+        id="company"
+        type="text"
+        name="company"
+        placeholder=" "
+        class="peer w-full pl-11 pr-4 pt-6 pb-2 rounded-lg 
+        bg-white/3 border border-white/8
+        text-white text-sm
+        focus:outline-none focus:border-white/20 focus:bg-white/5
+        transition-all duration-200"
+      />
+
+      <label for="company"
+        data-i18n="contact.form.company"
+        class="absolute left-11 top-1/3 -translate-y-1/2 mt-2 text-white/40 text-sm
+        transition-all duration-200
+        peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-white/60
+        peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-[11px]">
+      </label>
+
+    </div>
+  </div>
+
+  <div class="col-span-3">
+    <div class="group relative cursor-text">
+      
+      <Icon name="heroicons-outline:exclamation-circle"
+        class="absolute left-4 top-5 w-4 h-4 text-white/30 group-focus-within:text-white/60 transition" />
+
+      <textarea
+        id="problem"
+        name="problem"
+        rows="3"
+        required
+        placeholder=" "
+        class="peer w-full pl-11 pr-4 pt-6 pb-2 rounded-lg 
+        bg-white/3 border border-white/8
+        text-white text-sm resize-none
+        focus:outline-none focus:border-white/20 focus:bg-white/5
+        transition-all duration-200"
+      ></textarea>
+
+      <label for="problem"
+        data-i18n="contact.form.problem"
+        class="absolute left-11 top-5 text-white/40 text-sm
+        transition-all duration-200
+        peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-white/60
+        peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-[11px]">
+      </label>
+
+    </div>
+  </div>
+
+  <div class="col-span-3">
+    <div class="group relative cursor-text">
+      
+      <Icon name="heroicons-outline:light-bulb"
+        class="absolute left-4 top-5 w-4 h-4 text-white/30 group-focus-within:text-white/60 transition" />
+
+      <textarea
+        id="solution"
+        name="solution"
+        rows="2"
+        placeholder=" "
+        class="peer w-full pl-11 pr-4 pt-5 pb-2 rounded-lg 
+        bg-white/3 border border-white/8
+        text-white text-sm resize-none
+        focus:outline-none focus:border-white/20 focus:bg-white/5
+        transition-all duration-200"
+      ></textarea>
+
+      <label for="solution"
+        data-i18n="contact.form.solution"
+        class="absolute left-11 top-5 text-white/40 text-sm
+        transition-all duration-200
+        peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-white/60
+        peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-[11px]">
+      </label>
+
+    </div>
+  </div>
+
+  <div class="col-span-3">
+    <div class="group relative cursor-text">
+      
+      <Icon name="heroicons-outline:currency-dollar"
+        class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 group-focus-within:text-white/60 transition" />
+
+      <input
+        id="budget"
+        type="text"
+        name="budget"
+        required
+        placeholder=" "
+        class="peer w-full pl-11 pr-4 pt-6 pb-2 rounded-lg 
+        bg-white/3 border border-white/8
+        text-white text-sm
+        focus:outline-none focus:border-white/20 focus:bg-white/5
+        transition-all duration-200"
+      />
+
+      <label for="budget"
+        data-i18n="contact.form.budget"
+        class="absolute left-11 top-1/3 -translate-y-1/2 mt-2 text-white/40 text-sm
+        transition-all duration-200
+        peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-white/60
+        peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-[11px]">
+      </label>
+
+    </div>
+  </div>
+
+  <div class="col-span-3">
+    <div class="group relative cursor-text">
+      
+      <Icon name="heroicons-outline:chat-bubble-left-right"
+        class="absolute left-4 top-5 w-4 h-4 text-white/30 group-focus-within:text-white/60 transition" />
+
+      <textarea
+        id="context"
+        name="context"
+        rows="3"
+        placeholder=" "
+        class="peer w-full pl-11 pr-4 pt-5 pb-2 rounded-lg 
+        bg-white/3 border border-white/8
+        text-white text-sm resize-none
+        focus:outline-none focus:border-white/20 focus:bg-white/5
+        transition-all duration-200"
+      ></textarea>
+
+      <label for="context"
+        data-i18n="contact.form.context"
+        class="absolute left-11 top-5 text-white/40 text-sm
+        transition-all duration-200
+        peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-white/60
+        peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-[11px]">
+      </label>
+
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    id="submitBtn"
+    class="col-span-3 mt-6 group relative inline-flex items-center justify-center gap-2
+    rounded-lg px-5 py-3 text-sm font-medium
+    bg-white text-black
+    hover:cursor-pointer
+    transition-all duration-200 ease-out
+    hover:bg-white/90 active:scale-[0.98]
+    disabled:opacity-70 disabled:cursor-not-allowed"
+  >
+
+    <span
+      id="spinner"
+      class="hidden w-4 h-4 rounded-full border-2 border-black/30 border-t-black animate-spin"
+    ></span>
+
+    <Icon
+      id="startIcon"
+      name="heroicons-outline:play"
+      class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
+    />
+
+    <span id="btnText"  data-i18n="contact.form.submit"></span>
+
+  </button>
+</form>

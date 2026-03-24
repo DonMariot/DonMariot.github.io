@@ -1,0 +1,134 @@
+---
+import "../styles/global.css";
+import { SITE } from "../config/site";
+
+import GridBackground from "../components/backgrounds/GridBackground.astro";
+import NoiseTexture from "../components/backgrounds/NoiseTexture.astro";
+import Vignette from "../components/backgrounds/Vignette.astro";
+
+import Header from "../components/layout/Header.astro";
+import Sidebar from "../components/layout/Sidebar.astro";
+import Footer from "../components/layout/Footer.astro";
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  image = SITE.ogImage,
+  lang = SITE.locale,
+  noindex = false,
+  breadcrumbs = [],
+} = Astro.props;
+
+const canonical = `${SITE.url}${Astro.url.pathname}`;
+const fullImage = image.startsWith("http") ? image : `${SITE.url}${image}`;
+
+type Breadcrumb = {
+  name: string;
+  href: string;
+};
+
+const breadcrumbSchema: Record<string, any> | null =
+  breadcrumbs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbs.map((item: Breadcrumb, index: number) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.name,
+          item: `${SITE.url}${item.href}`,
+        })),
+      }
+    : null;
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImage} />
+    <meta property="og:image:secure_url" content={fullImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImage} />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href={SITE.url} />
+
+    <link rel="alternate" hreflang="en" href={SITE.url} />
+    <link rel="alternate" hreflang="fr" href={SITE.url.replace("donmariot.github.io", "donmariot.github.io/fr")} />
+  </head>
+
+  <body class="bg-black text-white antialiased overflow-x-hidden">
+
+    <div class="fixed inset-0 z-0 pointer-events-none select-none">
+      <GridBackground />
+      <NoiseTexture />
+      <Vignette />
+    </div>
+
+    <aside class="hidden md:flex fixed left-0 top-0 h-screen w-16 z-40">
+      <Sidebar />
+    </aside>
+
+    <Header />
+
+    <aside
+      id="mobile-sidebar"
+      class="fixed top-0 left-0 h-screen w-72 max-w-[80%] bg-black/95 backdrop-blur-lg
+            transform -translate-x-full transition-transform duration-300 ease-out
+            z-50 md:hidden"
+    >
+      <Sidebar />
+    </aside>
+
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-40 md:hidden"
+    ></div>
+
+    <div class="relative z-10 flex flex-col min-h-screen md:ml-16">
+      <main class="flex-1 w-full max-w-full mx-auto">
+        <slot />
+      </main>
+
+      <footer class="w-full border-t border-white/5">
+        <Footer />
+      </footer>
+    </div>
+
+    <script src="/src/scripts/app.ts"></script>
+
+    <script is:inline type="application/ld+json">
+      {JSON.stringify(organizationSchema)}
+    </script>
+
+    {breadcrumbSchema && (
+      <script is:inline type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
+    )}
+    
+  </body>
+</html>

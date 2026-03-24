@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+import AboutModal from "../ui/AboutModal.astro";
+---
+
+<header
+  class="
+    fixed
+    top-0
+    left-0
+    md:left-16
+    right-0
+    z-50
+    bg-white/70 dark:bg-black/10
+    backdrop-blur-xl
+    transition-transform duration-300 ease-in-out
+  "
+>
+  <div class="flex items-center justify-between px-6 md:px-12 py-4 max-w-full mx-auto">
+
+    <div class="flex items-center gap-3">
+      <h1 class="text-lg-1 text-gray-300 font-semibold flex items-center gap-2">
+        <span data-i18n="header.title"></span>
+        <button id="about-button" class="text-gray-400 hover:text-white transition hover:cursor-pointer">
+          <Icon name="heroicons-outline:chevron-down" class="w-6 h-6" />
+        </button>
+      </h1>
+    </div>
+
+    <div class="relative">
+      <button
+        id="language-button"
+        class="flex items-center gap-1 text-gray-400 hover:text-white transition hover:cursor-pointer"
+      >
+        <span id="current-language" class="text-sm font-medium"></span>
+        <Icon name="heroicons-outline:globe-alt" class="w-6 h-6"/>
+      </button>
+
+      <div
+        id="language-menu"
+        class="
+          absolute right-0 mt-2 w-36
+          hidden
+          rounded-lg border border-white/10
+          bg-white/60 dark:bg-neutral-900/60
+          backdrop-blur-xl shadow-xl overflow-hidden
+          transform scale-95 opacity-0
+          transition-all duration-200 origin-top-right
+        "
+      >
+        <button data-lang="en" class="language-option w-full text-left px-4 py-2  hover:bg-gray-100 dark:hover:bg-neutral-800 flex items-center gap-2 hover:cursor-pointer">
+          <img src="/flags/united-states.png" alt="English" class="w-5 h-5 rounded-sm"/>  <span class="text-sm" data-i18n="lang.en"></span>
+        </button>
+        <button data-lang="fr" class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800 flex items-center gap-2 hover:cursor-pointer">
+          <img src="/flags/france.png" alt="Français" class="w-5 h-5 rounded-sm"/> <span class="text-sm" data-i18n="lang.fr"></span>
+        </button>
+      </div>
+    </div>
+
+    <AboutModal />
+  </div>
+</header>

@@ -1,0 +1,27 @@
+---
+import Step from "./Step.astro"
+---
+
+<div class="grid md:grid-cols-3 gap-6 hover:cursor-pointer">
+  <Step
+    number="01"
+    icon="heroicons-outline:magnifying-glass"
+    dataI18nTitle="method.steps.0.title"
+    dataI18nDescription="method.steps.0.description"
+    dataI18nDetailsPrefix="method.steps.0.details"
+  />
+  <Step
+    number="02"
+    icon="heroicons-outline:cpu-chip"
+    dataI18nTitle="method.steps.1.title"
+    dataI18nDescription="method.steps.1.description"
+    dataI18nDetailsPrefix="method.steps.1.details"
+  />
+  <Step
+    number="03"
+    icon="heroicons-outline:upload"
+    dataI18nTitle="method.steps.2.title"
+    dataI18nDescription="method.steps.2.description"
+    dataI18nDetailsPrefix="method.steps.2.details"
+  />
+</div>
