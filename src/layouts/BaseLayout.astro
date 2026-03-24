@@ -13,13 +13,14 @@ import Footer from "../components/layout/Footer.astro";
 const {
   title = SITE.title,
   description = SITE.description,
-  image = SITE.ogImage,
   lang = SITE.locale,
   noindex = false,
   breadcrumbs = [],
 } = Astro.props;
 
 const canonical = `${SITE.url}${Astro.url.pathname}`;
+
+const image = Astro.props.image ?? SITE.ogImage;
 const fullImage = image.startsWith("http") ? image : `${SITE.url}${image}`;
 
 type Breadcrumb = {
