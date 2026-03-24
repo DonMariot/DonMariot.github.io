@@ -5,65 +5,101 @@
    Variables globales
 ========================== */
 :root {
-  --font-sans: 'Roboto', sans-serif;
-  --font-heading: 'Roboto', sans-serif;
+  --font-sans: 'Roboto', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Roboto', system-ui, -apple-system, sans-serif;
 }
 
 /* ==========================
    Reset & Base
 ========================== */
-html, body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Background optimisé (évite jitter) */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
 
   background-image:
-    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
 
   background-size: 20px 20px;
 
   pointer-events: none;
   z-index: -1;
+
+  /* optimisation GPU */
+  transform: translateZ(0);
 }
 
 /* ==========================
    Layout principal
 ========================== */
 main {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 0.1px; /* anti-jitter */
+  
+  /* performance */
+  contain: layout style paint;
 }
 
 /* ==========================
    Sections
 ========================== */
 section {
-  min-height: 100svh;
+  min-height: 100vh;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  /* évite les micro tremblements */
+  contain: layout paint;
 }
 
 /* ==========================
    Sidebar mobile
 ========================== */
 #sidebar-overlay {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
+  will-change: opacity;
 }
 
 #sidebar {
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
+  will-change: transform;
 }
 
+/* ==========================
+   Utilities
+========================== */
 .fade-mask {
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* ==========================
+   Scroll behavior fix (mobile)
+========================== */
+html, body {
+  overscroll-behavior-y: none;
 }
 
 /* ==========================
