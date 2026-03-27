@@ -41,6 +41,14 @@ const breadcrumbSchema: Record<string, any> | null =
         })),
       }
     : null;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  url: SITE.url,
+  logo: `${SITE.url}/profil.webp`,
+};
 ---
 
 <!DOCTYPE html>
@@ -126,14 +134,18 @@ const breadcrumbSchema: Record<string, any> | null =
 
     <script src="/src/scripts/app.ts"></script>
 
-    <script is:inline type="application/ld+json">
-      {JSON.stringify(organizationSchema)}
-    </script>
+    {organizationSchema && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(organizationSchema)}
+      />
+    )}
 
-    {breadcrumbSchema && (
-      <script is:inline type="application/ld+json">
-        {JSON.stringify(breadcrumbSchema)}
-      </script>
+   {breadcrumbSchema && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(breadcrumbSchema)}
+      />
     )}
     
   </body>
