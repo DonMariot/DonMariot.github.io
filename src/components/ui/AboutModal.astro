@@ -15,13 +15,13 @@ import { Icon } from "astro-icon/components";
     id="about-panel"
     class="
       relative z-10 w-full max-w-4xl rounded-lg border border-white/20
-      dark:border-white/10 bg-white/80 dark:bg-neutral-900/90
+      bg-neutral-900/90
       backdrop-blur-xl shadow-2xl scale-95 opacity-0 transition-all duration-300 overflow-hidden
     "
   >
     <button
       id="about-close"
-      class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 dark:hover:text-white hover:cursor-pointer transition"
+      class="absolute top-6 right-6 text-gray-400 hover:text-white hover:cursor-pointer transition"
     >
       <Icon name="heroicons-outline:x-mark" class="w-6 h-6" />
     </button>
@@ -30,8 +30,7 @@ import { Icon } from "astro-icon/components";
       <div
         class="
           flex items-center justify-center p-12 h-60 md:h-full
-          bg-linear-to-br from-gray-100 to-gray-200
-          dark:from-neutral-800 dark:to-neutral-900
+          bg-gradient-to-br from-neutral-800 to-neutral-900
         "
       >
         <img
@@ -45,14 +44,14 @@ import { Icon } from "astro-icon/components";
       </div>
 
       <div class="p-10 flex flex-col justify-center space-y-6">
-        <div class="pb-4 border-b border-gray-200 dark:border-neutral-700">
-          <h2 class="text-2xl mb-4 font-bold text-gray-900 dark:text-white">
+        <div class="pb-4 border-b border-neutral-700">
+          <h2 class="text-2xl mb-4 font-bold text-white">
             Don Mariot R.
           </h2>
-          <p class="text-lg text-gray-500 dark:text-gray-400 font-medium" data-i18n="about.subtitle"></p>
+          <p class="text-lg text-gray-400 font-medium" data-i18n="about.subtitle"></p>
         </div>
 
-        <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed text-justify" data-i18n="about.description"></p>
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed text-justify" data-i18n="about.description"></p>
 
         <div class="flex gap-4 flex-wrap">
           <a
@@ -71,7 +70,7 @@ import { Icon } from "astro-icon/components";
             id="contact-btn"
             class="
               flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold
-              border border-gray-300 dark:border-neutral-700 hover:bg-gray-100 dark:hover:bg-neutral-800 transition
+              border border-neutral-700 hover:bg-neutral-800 transition
             "
           >
             <Icon name="heroicons-outline:chat-bubble-left-right" class="w-5 h-5" />
@@ -81,12 +80,11 @@ import { Icon } from "astro-icon/components";
 
         <p
           id="request-cv-text"
-          class="text-gray-700 dark:text-gray-300 mt-1 text-sm opacity-0 transition-opacity duration-500"
+          class="text-gray-300 mt-1 text-sm opacity-0 transition-opacity duration-500"
           data-i18n="about.request_cv_text"
-          >
-        </p>
+        ></p>
 
-        <div id="social-icons" class="flex gap-6 border-t border-gray-200 dark:border-neutral-700 py-4 justify-center">
+        <div id="social-icons" class="flex gap-6 border-t border-neutral-700 py-4 justify-center">
           <a href="mailto:razandri17@gmail.com" aria-label="Email" class="group">
             <img src="/icons/gmail.svg"
                 class="w-6 h-6 transition duration-300 group-hover:animate-bounce"
